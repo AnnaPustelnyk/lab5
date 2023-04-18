@@ -18,5 +18,25 @@ namespace main
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+            bmp.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            pictureBox1.Image = bmp;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+            bmp.RotateFlip(RotateFlipType.RotateNoneFlipY);
+            pictureBox1.Image = bmp;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+            bmp.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            pictureBox1.Image = bmp;
+        }
     }
 }
