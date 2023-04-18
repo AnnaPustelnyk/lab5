@@ -49,5 +49,34 @@ namespace main
 
             pictureBox1.Image = gbmp;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+
+            //get image dimension
+            int width = bmp.Width;
+            int height = bmp.Height;
+
+            Bitmap gbmp = new Bitmap(bmp);
+
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    Color p = bmp.GetPixel(x, y);
+
+                    int a = p.A;
+                    int b = 255 - p.B;
+                    int c = 255 - p.R;
+                    int d = 255 - p.G;
+
+                    gbmp.SetPixel(x, y, Color.FromArgb(a, c, d, b));
+
+                }
+            }
+
+            pictureBox1.Image = gbmp;
+        }
     }
 }
